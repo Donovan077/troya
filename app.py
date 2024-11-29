@@ -7,6 +7,16 @@ from werkzeug.utils import secure_filename
 import bcrypt
 
 app = Flask(__name__)
+
+# Ruta principal
+@app.route("/")
+def home():
+    return "¡Hola, mundo! La aplicación está funcionando correctamente."
+
+# Verifica que este archivo se está ejecutando directamente
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
 app.secret_key = 'tu_clave_secreta_aqui'  # Cambia esto por una clave secreta única
 
 
